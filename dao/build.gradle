@@ -1,0 +1,25 @@
+group 'conference_system'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    def springVersion = "4.2.4.RELEASE"
+    def mongoJavaDriver = "3.2.1"
+    def springDataMongoDB = "1.8.2.RELEASE"
+
+    compile project(':model')
+    compile "org.mongodb:mongo-java-driver:${mongoJavaDriver}"
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-beans:${springVersion}"
+    compile "org.springframework:spring-jdbc:${springVersion}"
+    compile "org.springframework:spring-test:${springVersion}"
+    compile "org.springframework.data:spring-data-mongodb:${springDataMongoDB}"
+}

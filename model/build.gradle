@@ -1,0 +1,15 @@
+group 'conference_system'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.6.4'
+    compile 'org.springframework.data:spring-data-mongodb:1.8.2.RELEASE'
+}

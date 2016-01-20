@@ -1,0 +1,5 @@
+rootProject.name = 'conference_system'
+include 'model'
+include 'dao'
+include 'services'
+include 'rest'
