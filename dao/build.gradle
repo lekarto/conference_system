@@ -14,6 +14,7 @@ dependencies {
     def springVersion = "4.2.4.RELEASE"
     def mongoJavaDriver = "3.2.1"
     def springDataMongoDB = "1.8.2.RELEASE"
+    def mockito = "2.0.2-beta"
 
     compile project(':model')
     compile "org.mongodb:mongo-java-driver:${mongoJavaDriver}"
@@ -22,4 +23,7 @@ dependencies {
     compile "org.springframework:spring-jdbc:${springVersion}"
     compile "org.springframework:spring-test:${springVersion}"
     compile "org.springframework.data:spring-data-mongodb:${springDataMongoDB}"
+
+    testCompile "org.mockito:mockito-all:${mockito}"
+
 }

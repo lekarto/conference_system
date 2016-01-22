@@ -1,0 +1,19 @@
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <!--<File name="File" fileName="logs/conference_system.log">-->
+        <File name="File" fileName="/home/oxff/tools/apache-tomcat-9.0.0.M1/logs/conference_system_test.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="File"/>
+        </Root>
+        <Logger name="com.epam" level="DEBUG"/>
+        <Logger name="org.springframework.jdbc.core" level="TRACE"/>
+    </Loggers>
+</Configuration>

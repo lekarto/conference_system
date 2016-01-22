@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "_id": "23rjdnfv876",
+      "_class" : "com.epam.model.User",
+      "name": "Ivan",
+      "email": "ivan@gmail.com"
+    },
+    {
+      "_id": "98dfvkjns65g",
+      "_class" : "com.epam.model.User",
+      "name": "Varvara",
+      "email": "varvara@mongodb.com"
+    }
+  ]
+}
