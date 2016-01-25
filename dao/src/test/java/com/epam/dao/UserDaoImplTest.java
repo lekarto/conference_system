@@ -43,4 +43,16 @@ public class UserDaoImplTest {
 //        Assert.assertNotNull(user.getId());
 //        Assert.assertTrue(!user.getId().equals(""));
     }
+
+    @Test
+    public void testFindByID() {
+        LOGGER.debug("test: testFindByID()");
+        User user = userDao.findByID("123456");
+        LOGGER.debug("test: testFindByID(): user= "+user);
+        Assert.assertTrue(user != null);
+        LOGGER.debug("test: testFindByID(): user not NULL");
+        Assert.assertTrue(user.getId().equals("123456") &&
+                (!user.getName().equals("")) &&
+                (!user.getPassword().equals("")));
+    }
 }

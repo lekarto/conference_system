@@ -37,11 +37,9 @@ public class AppConfig {
         allUsers.add(new User("2323derfvb", "22234"));
         Mockito.when(mongoTemplate.findAll(User.class)).thenReturn(allUsers);
 
-        Mockito.doAnswer(invocation -> {
-            Object[] args = invocation.getArguments();
-            ((User) args[0]).setId("2342");
-            return null;
-        }).doNothing().when(mongoTemplate).insert(User.class);
+        User userByID = new User("Vas", "pwd");
+        userByID.setId("123456");
+        Mockito.when(mongoTemplate.findById("123456", User.class)).thenReturn(userByID);
 
         return mongoTemplate;
     }
