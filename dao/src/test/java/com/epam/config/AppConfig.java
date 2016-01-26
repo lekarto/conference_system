@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +34,13 @@ public class AppConfig {
     @Bean(name = "mongoTemplate")
     public MongoTemplate getMongoTemplate() {
         MongoTemplate mongoTemplate = Mockito.mock(MongoTemplate.class);
-        List<User> allUsers = new ArrayList<>();
-        allUsers.add(new User("2323", "22"));
-        allUsers.add(new User("2323derfvb", "22234"));
+        List<User> allUsers = new ArrayList<User>() {{
+            add(new User("Petro", "22"));
+            add(new User("2323derfvb", "22234"));
+        }};
+        for (int i = 0; i < allUsers.size(); i++) {
+            allUsers.get(i).setId((String.valueOf(i+100)));
+        }
         Mockito.when(mongoTemplate.findAll(User.class)).thenReturn(allUsers);
 
         User userByID = new User("Vas", "pwd");

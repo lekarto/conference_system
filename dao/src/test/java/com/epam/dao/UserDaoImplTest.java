@@ -55,4 +55,11 @@ public class UserDaoImplTest {
                 (!user.getName().equals("")) &&
                 (!user.getPassword().equals("")));
     }
+
+    @Test
+    public void testFindByName() {
+        LOGGER.debug("test: testFindByName()");
+        User user = userDao.findByName("Petro");
+        Assert.assertTrue(user == null);
+    }
 }
